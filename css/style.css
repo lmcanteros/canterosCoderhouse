@@ -1,0 +1,654 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*****ITEMS GENERALES INICIO*****/
+
+/*CAMBIAR ROBOTO POR UNA MEJOR FUENTE*/
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color:  #741b47;
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid white;
+    position: sticky;
+    z-index: 1;
+}
+
+.logo__header{
+    text-decoration: none;
+}
+
+.logo__footer{
+    text-decoration: none;
+    color: white;
+    font-size: 33.334px;
+}
+
+h1{
+    color: white;
+    font-family: 'Quintessential', cursive;
+    font-size: 50px;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Quintessential', cursive;
+    font-weight: bold;
+}
+
+li a:hover{
+    background-color: #f6b26b;
+    color: #741b47;
+}
+
+body{
+    background-color: #f6b26b;
+    width: 100%;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:  #741b47;
+    color: white;
+    font-family: 'Quintessential', cursive;
+    height: 100px;
+    width: 100%;
+    border-top: 1px solid white;
+}
+
+.iconos{
+    display: flex;
+    font-size: 30px;
+    gap: 15px;
+}
+
+/*Estos Mediaqueries son generales para todas las páginas.*/
+
+@media screen and (max-width: 768px){
+    ul{
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 80%;
+        gap: 0;
+    }
+
+    .logo__footer{
+        font-size: 30px;
+    }
+
+    footer p{
+        display: none;
+    }
+
+    .iconos{
+        gap: 10px;
+    }
+}
+
+/*****ITEMS GENERALES FIN*****/
+/*****INDEX INICIO*****/
+
+.home{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "header header header"
+                        "main main main"
+                        "footer footer footer";
+}
+
+.home header{
+    grid-area: header;
+}
+
+.home main{
+    background-image: url("../img/home.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    max-height: 100%;
+    grid-area: main;
+}
+
+.home footer{
+    grid-area: footer;
+}
+
+.home__texto{
+    /*Ver cómo ajustar correctamente el fondo al tamaño de la pantalla*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: white;
+    text-align: center;
+    grid-area: main;
+}
+
+.home__titulo{
+    font-family: 'Quintessential', cursive;
+    font-size: 30px;
+}
+
+.home__parrafo{
+    font-family: 'Roboto Mono' , monospace;
+}
+
+@media screen and (max-width: 768px){
+    .home{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: "header header"
+                            "main main"
+                            "footer footer";
+    }
+}
+
+@media screen and (max-width: 600px){
+    .home{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas: "header"
+                            "main"
+                            "footer";
+    }
+
+    .home__texto{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/*****INDEX FIN*****/
+/*****MAZOS INICIO*****/
+
+.mazos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header header header"
+                        "marsella rider thoth"
+                        "footer footer footer";
+    gap: 30px;
+}
+
+.mazos header{
+    grid-area: header;
+}
+
+.marsella{
+    grid-area: marsella;
+}
+
+.rider{
+    grid-area: rider;
+}
+
+.thoth{
+    grid-area: thoth;
+}
+
+.mazos footer{
+    /*Solución provisoria. El contenido es menor que el tamaño de la pantalla en una resolución de 1920x1080.*/
+    grid-area: footer;
+    position: absolute;
+    bottom: 0;
+}
+
+.deck{
+    font-family: 'Quintessential', cursive;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.deck img{
+    border-top: solid 3px black;
+    border-left: solid 3px black;
+    border-right: solid 3px black;
+    border-bottom: solid 3px black;
+}
+
+.deck p{
+    font-family: 'Roboto Mono' , monospace;
+}
+
+@media screen and (max-width: 768px){
+    .mazos{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: "header"
+                            "marsella"
+                            "rider"
+                            "thoth"
+                            "footer";
+        gap: 30px;
+    }
+
+    .deck p{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .mazos footer{
+        /*Se aplicó "position: static" para revertir el "absolute".*/
+        grid-area: footer;
+        position: static;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .mazos{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: "header"
+                            "marsella"
+                            "rider"
+                            "thoth"
+                            "footer";
+        gap: 30px;
+    }
+}
+
+/*****MAZOS FIN*****/
+/*****CARTAS INICIO*****/
+
+.cartas{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "header"
+                        "video1"
+                        "video2"
+                        "video3"
+                        "footer";
+    gap: 30px;
+}
+
+.cartas header{
+    grid-area: header;
+}
+
+.video1{
+    grid-area: video1;
+}
+
+.video2{
+    grid-area: video2;
+}
+
+.video3{
+    grid-area: video3;
+}
+
+.cartas footer{
+    grid-area: footer;
+}
+
+.titulo__cartas{
+    font-family: 'Quintessential', cursive;
+    text-align: center;
+}
+
+.parrafo__cartas{
+    font-family: 'Roboto Mono' , monospace;
+    text-align: center;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+iframe{
+    border-top: solid 1px black;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    height: 505px;
+    width: 853px;
+}
+
+.estilo__video{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media screen and (max-width: 768px){
+    .cartas{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: "header"
+                            "video1"
+                            "video2"
+                            "video3"
+                            "footer";
+        gap: 30px;
+    }
+
+    .parrafo__cartas{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    iframe{
+        height: 385px;
+        width: 640px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .cartas{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: "header"
+                            "video1"
+                            "video2"
+                            "video3"
+                            "footer";
+        gap: 30px;
+    }
+
+    iframe{
+        height: initial;
+        width: initial;
+    }
+}
+
+/*****CARTAS FIN*****/
+/*****GALERIA INICIO*****/
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header header header"
+                        "mazo1 mazo2 mazo3"
+                        "mazo4 mazo5 mazo6"
+                        "mazo7 mazo8 mazo9"
+                        "mazo10 mazo11 mazo12"
+                        "footer footer footer";
+    gap: 50px;
+}
+
+.galeria header{
+    grid-area: header;
+}
+
+.estilo__mazo{
+    display: flex;
+    justify-content: center;
+}
+
+.estilo__mazo img{
+    border-top: solid 3px black;
+    border-left: solid 3px black;
+    border-right: solid 3px black;
+    border-bottom: solid 3px black;
+    width: 50%;
+    filter: grayscale(1);
+}
+
+.estilo__mazo img:hover{
+    filter: grayscale(0);
+}
+
+.mazo1{
+    grid-area: mazo1;
+}
+
+.mazo2{
+    grid-area: mazo2;
+}
+
+.mazo3{
+    grid-area: mazo3;
+}
+
+.mazo4{
+    grid-area: mazo4;
+}
+
+.mazo5{
+    grid-area: mazo5;
+}
+
+.mazo6{
+    grid-area: mazo6;
+}
+
+.mazo7{
+    grid-area: mazo7;
+}
+
+.mazo8{
+    grid-area: mazo8;
+}
+
+.mazo9{
+    grid-area: mazo9;
+}
+
+.mazo10{
+    grid-area: mazo10;
+}
+
+.mazo11{
+    grid-area: mazo11;
+}
+
+.mazo12{
+    grid-area: mazo12;
+}
+
+.galeria footer{
+    grid-area: footer;
+}
+
+@media screen and (max-width: 768px){
+    .galeria{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "header header"
+                            "mazo1 mazo2"
+                            "mazo3 mazo4"
+                            "mazo5 mazo6"
+                            "mazo7 mazo8"
+                            "mazo9 mazo10"
+                            "mazo11 mazo12"
+                            "footer footer";
+        gap: 50px;
+    }
+
+    .estilo__mazo img{
+        /*En pantalla táctil no tiene sentido que las imágenes estén en blanco y negro.*/
+        filter: grayscale(0);
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .galeria{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: "header"
+                            "mazo1"
+                            "mazo2"
+                            "mazo3"
+                            "mazo4"
+                            "mazo5"
+                            "mazo6"
+                            "mazo7"
+                            "mazo8"
+                            "mazo9"
+                            "mazo10"
+                            "mazo11"
+                            "mazo12"
+                            "footer";
+        gap: 50px;
+    }
+
+    .estilo__mazo img{
+        width: 70%;
+    }
+}
+
+/*****GALERIA FIN*****/
+/*****CONTACTO INICIO*****/
+
+.contacto{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header header header"
+                        "titulo titulo titulo"
+                        "pregunta1 pregunta1 pregunta1"
+                        "pregunta2 pregunta2 pregunta2"
+                        "pregunta3 pregunta3 pregunta3"
+                        ". consultas ."
+                        "footer footer footer";
+    gap: 30px
+}
+
+.contacto header{
+    grid-area: header;
+}
+
+.contacto footer{
+    /*Solución provisoria. El contenido es menor que el tamaño de la pantalla en una resolución de 1920x1080.*/
+    /*Causa overflow en 1024px*/
+    grid-area: footer;
+    position: absolute;
+    bottom: 0;
+}
+
+.preguntas__frecuentes{
+    font-family: 'Quintessential', cursive;
+    grid-area: titulo;
+    text-align: center;
+}
+
+.pregunta1{
+    grid-area: pregunta1;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.pregunta2{
+    grid-area: pregunta2;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.pregunta3{
+    grid-area: pregunta3;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.contacto h3{
+    font-family: 'Quintessential', cursive;
+}
+
+.respuesta1{
+    font-family: 'Roboto Mono' , monospace;
+}
+
+.respuesta2{
+    font-family: 'Roboto Mono' , monospace;
+}
+
+.respuesta3{
+    font-family: 'Roboto Mono' , monospace;
+}
+
+.consultas{
+    font-family: 'Quintessential', cursive;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    grid-area: consultas;
+}
+
+.formulario__datos{
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario__consulta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px){
+    .contacto{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: "header header header header header"
+                            "titulo titulo titulo titulo titulo"
+                            "pregunta1 pregunta1 pregunta1 pregunta1 pregunta1"
+                            "pregunta2 pregunta2 pregunta2 pregunta2 pregunta2"
+                            "pregunta3 pregunta3 pregunta3 pregunta3 pregunta3"
+                            ". consultas consultas consultas ."
+                            "footer footer footer footer footer";
+        gap: 30px
+    }
+
+    .contacto footer{
+        /*Se aplicó "position: static" para revertir el "absolute".*/
+        position: static;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .contacto{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "header header header"
+                            "titulo titulo titulo"
+                            "pregunta1 pregunta1 pregunta1"
+                            "pregunta2 pregunta2 pregunta2"
+                            "pregunta3 pregunta3 pregunta3"
+                            ". consultas ."
+                            "footer footer footer";
+        gap: 30px
+    }
+}
+
+/*****CONTACTO FIN******/
