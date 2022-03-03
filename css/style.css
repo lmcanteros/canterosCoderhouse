@@ -3,22 +3,15 @@
     padding: 0;
 }
 
+/*---------CHECKLIST BOOTSTRAP----------/
+/-Slider en galería MOBILE.             /
+/-Grilla en galería DESKTOP.            /
+/-Mejorar páginas "Mazos" y "Cartas".   /
+/______________________________________*/
+
 /*****ITEMS GENERALES INICIO*****/
 
-/*CAMBIAR ROBOTO POR UNA MEJOR FUENTE*/
-
-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background-color:  #741b47;
-    height: 100px;
-    width: 100%;
-    border-bottom: 1px solid white;
-    position: sticky;
-    z-index: 1;
-}
+/**CAMBIAR ROBOTO POR UNA MEJOR FUENTE**/
 
 .logo__header{
     text-decoration: none;
@@ -30,17 +23,14 @@ header{
     font-size: 33.334px;
 }
 
+.logo__footer:hover{
+    color: white;
+}
+
 h1{
     color: white;
     font-family: 'Quintessential', cursive;
     font-size: 50px;
-}
-
-ul{
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
 }
 
 li a{
@@ -63,14 +53,19 @@ body{
 footer{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     background-color:  #741b47;
     color: white;
     font-family: 'Quintessential', cursive;
+    font-weight: lighter;
     height: 100px;
     width: 100%;
     border-top: 1px solid white;
+}
+
+.texto__footer{
+    margin-bottom: 0px;
 }
 
 .iconos{
@@ -78,8 +73,6 @@ footer{
     font-size: 30px;
     gap: 15px;
 }
-
-/*Estos Mediaqueries son generales para todas las páginas.*/
 
 @media screen and (max-width: 768px){
     ul{
@@ -112,19 +105,6 @@ footer{
 /*****ITEMS GENERALES FIN*****/
 /*****INDEX INICIO*****/
 
-.home{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas: "header header header"
-                        "main main main"
-                        "footer footer footer";
-}
-
-.home header{
-    grid-area: header;
-}
-
 .home main{
     background-image: url("../img/home.jpg");
     background-repeat: no-repeat;
@@ -132,15 +112,9 @@ footer{
     background-position: center;
     min-height: 100vh;
     max-height: 100%;
-    grid-area: main;
-}
-
-.home footer{
-    grid-area: footer;
 }
 
 .home__texto{
-    /*Ver cómo ajustar correctamente el fondo al tamaño de la pantalla*/
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -151,7 +125,6 @@ footer{
     padding-right: 100px;
     color: white;
     text-align: center;
-    grid-area: main;
 }
 
 .home__titulo{
@@ -164,26 +137,9 @@ footer{
 }
 
 @media screen and (max-width: 768px){
-    .home{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        grid-template-areas: "header header"
-                            "main main"
-                            "footer footer";
-    }
 }
 
 @media screen and (max-width: 600px){
-    .home{
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: auto;
-        grid-template-areas: "header"
-                            "main"
-                            "footer";
-    }
-
     .home__texto{
         padding-left: 10px;
         padding-right: 10px;
@@ -194,35 +150,10 @@ footer{
 /*****MAZOS INICIO*****/
 
 .mazos{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "header header header"
-                        "marsella rider thoth"
-                        "footer footer footer";
-    gap: 30px;
-}
-
-.mazos header{
-    grid-area: header;
-}
-
-.marsella{
-    grid-area: marsella;
-}
-
-.rider{
-    grid-area: rider;
-}
-
-.thoth{
-    grid-area: thoth;
-}
-
-.mazos footer{
-    /*Solución provisoria. El contenido es menor que el tamaño de la pantalla en una resolución de 1920x1080.*/
-    grid-area: footer;
-    position: absolute;
-    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    max-height: 100%;
 }
 
 .deck{
@@ -248,38 +179,15 @@ footer{
 
 @media screen and (max-width: 768px){
     .mazos{
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas: "header"
-                            "marsella"
-                            "rider"
-                            "thoth"
-                            "footer";
+        flex-direction: column;
         gap: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .deck p{
         padding-left: 50px;
         padding-right: 50px;
-    }
-
-    .mazos footer{
-        /*Se aplicó "position: static" para revertir el "absolute".*/
-        grid-area: footer;
-        position: static;
-    }
-}
-
-@media screen and (max-width: 600px){
-    .mazos{
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas: "header"
-                            "marsella"
-                            "rider"
-                            "thoth"
-                            "footer";
-        gap: 30px;
     }
 }
 
@@ -528,68 +436,17 @@ iframe{
 /*****CONTACTO INICIO*****/
 
 .contacto{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "header header header"
-                        "titulo titulo titulo"
-                        "pregunta1 pregunta1 pregunta1"
-                        "pregunta2 pregunta2 pregunta2"
-                        "pregunta3 pregunta3 pregunta3"
-                        ". consultas ."
-                        "footer footer footer";
-    gap: 30px
-}
-
-.contacto header{
-    grid-area: header;
-}
-
-.contacto footer{
-    /*Solución provisoria. El contenido es menor que el tamaño de la pantalla en una resolución de 1920x1080.*/
-    /*Causa overflow en 1024px*/
-    grid-area: footer;
-    position: absolute;
-    bottom: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .preguntas__frecuentes{
     font-family: 'Quintessential', cursive;
-    grid-area: titulo;
     text-align: center;
-}
-
-.pregunta1{
-    grid-area: pregunta1;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-.pregunta2{
-    grid-area: pregunta2;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-.pregunta3{
-    grid-area: pregunta3;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-.contacto h3{
-    font-family: 'Quintessential', cursive;
-}
-
-.respuesta1{
-    font-family: 'Roboto Mono' , monospace;
-}
-
-.respuesta2{
-    font-family: 'Roboto Mono' , monospace;
-}
-
-.respuesta3{
-    font-family: 'Roboto Mono' , monospace;
+    padding-bottom: 30px;
+    
 }
 
 .consultas{
@@ -601,54 +458,37 @@ iframe{
     justify-content: center;
     align-items: center;
     gap: 20px;
-    grid-area: consultas;
 }
 
-.formulario__datos{
-    display: flex;
-    flex-direction: column;
+.accordion-header{
+    font-family: 'Quintessential', cursive;
+    font-weight: bold;
 }
 
-.formulario__consulta{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.accordion-button{
+    color: white;
+    background-color: #741b47;
+    border-radius: 100px;
+}
+
+.accordion-button:not(.collapsed){
+    color: white;
+    background-color: #741b47;
+}
+
+.accordion-body{
+    color: black;
+    font-family: 'Quintessential', cursive;
+}
+
+.consultas button{
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 768px){
-    .contacto{
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-areas: "header header header header header"
-                            "titulo titulo titulo titulo titulo"
-                            "pregunta1 pregunta1 pregunta1 pregunta1 pregunta1"
-                            "pregunta2 pregunta2 pregunta2 pregunta2 pregunta2"
-                            "pregunta3 pregunta3 pregunta3 pregunta3 pregunta3"
-                            ". consultas consultas consultas ."
-                            "footer footer footer footer footer";
-        gap: 30px
-    }
-
-    .contacto footer{
-        /*Se aplicó "position: static" para revertir el "absolute".*/
-        position: static;
-    }
 }
 
 @media screen and (max-width: 600px){
-    .contacto{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "header header header"
-                            "titulo titulo titulo"
-                            "pregunta1 pregunta1 pregunta1"
-                            "pregunta2 pregunta2 pregunta2"
-                            "pregunta3 pregunta3 pregunta3"
-                            ". consultas ."
-                            "footer footer footer";
-        gap: 30px
-    }
 }
 
 /*****CONTACTO FIN******/
