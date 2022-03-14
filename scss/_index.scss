@@ -1,0 +1,45 @@
+/*****INDEX INICIO*****/
+
+.home main{
+    min-height: 100vh;
+    max-height: 100%;
+}
+
+.hero{
+    background-image: linear-gradient($colorFondo, $colorSecundario), linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("../img/home.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 91vh;
+
+    &__texto{
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    &__titulo{
+        font-family: $fuentePrincipal;
+        font-size: 50px;
+    }
+
+    &__parrafo{
+        font-family: $fuenteSecundaria;
+    }
+}
+
+@media screen and (max-width: 768px){
+    /*El tamaño y posición del texto, si bien están ajustados para mobile, no me dejan satisfecho. Buscar una mejor manera.*/
+    .hero__texto{
+        padding-left: 10px;
+        padding-right: 10px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*****INDEX FIN*****/

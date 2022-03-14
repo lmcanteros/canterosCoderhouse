@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*----------CHECKLIST GENERAL-----------/
+/-Cambiar Roboto por mejor fuente.      /
+/-Mejorar (o rehacer) página "Cartas".  /
+/-Corregir tamaño fondo de páginas.     /
+/______________________________________*/
+
+/*---------CHECKLIST BOOTSTRAP----------/
+/-Slider en galería MOBILE.             /
+/-Mejorar "Home" agregando items.       /
+/______________________________________*/
+
+@import "./_variables";
+@import "./_general";
+@import "./_index";
+@import "./_mazos";
+@import "./_cartas";
+@import "./_galeria";
+@import "./_contacto";

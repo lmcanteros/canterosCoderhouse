@@ -1,0 +1,153 @@
+/*****GALERIA INICIO*****/
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header header header"
+                    "mazo1 mazo2 mazo3"
+                    "mazo4 mazo5 mazo6"
+                    "mazo7 mazo8 mazo9"
+                    "mazo10 mazo11 mazo12"
+                    "footer footer footer";
+    gap: 50px;
+    /*Ver cómo achicar el fondo para vista mobile.*/
+    background-image: linear-gradient($colorFondo, $colorSecundario), linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/galeria.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    & header{
+        grid-area: header;
+    }
+
+    & footer{
+        grid-area: footer;
+    }
+}
+
+.estilo__mazo{
+    display: flex;
+    justify-content: center;
+    filter: grayscale(1);
+
+    &:hover{
+        transform: scale(1.2);
+        transition: 0.25s;
+        filter: grayscale(0);
+    }
+
+    & img{
+        border-top: solid 3px black;
+        border-left: solid 3px black;
+        border-right: solid 3px black;
+        border-bottom: solid 3px black;
+        width: 50%;
+    }
+}
+
+.mazo1{
+    grid-area: mazo1;
+}
+
+.mazo2{
+    grid-area: mazo2;
+}
+
+.mazo3{
+    grid-area: mazo3;
+}
+
+.mazo4{
+    grid-area: mazo4;
+}
+
+.mazo5{
+    grid-area: mazo5;
+}
+
+.mazo6{
+    grid-area: mazo6;
+}
+
+.mazo7{
+    grid-area: mazo7;
+}
+
+.mazo8{
+    grid-area: mazo8;
+}
+
+.mazo9{
+    grid-area: mazo9;
+}
+
+.mazo10{
+    grid-area: mazo10;
+}
+
+.mazo11{
+    grid-area: mazo11;
+}
+
+.mazo12{
+    grid-area: mazo12;
+}
+
+@media screen and (max-width: 768px){
+    .galeria{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "header header"
+                            "mazo1 mazo2"
+                            "mazo3 mazo4"
+                            "mazo5 mazo6"
+                            "mazo7 mazo8"
+                            "mazo9 mazo10"
+                            "mazo11 mazo12"
+                            "footer footer";
+        gap: 50px;
+    }
+
+    .estilo__mazo{
+        /*En pantalla táctil no tiene sentido que las imágenes estén en blanco y negro.*/
+        filter: grayscale(0);
+
+        &:hover{
+        /*Se agregó esto para "anular" el hover.*/
+        transform: scale(1);
+        }
+
+        & img{
+            width: 75%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    .galeria{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: "header"
+                            "mazo1"
+                            "mazo2"
+                            "mazo3"
+                            "mazo4"
+                            "mazo5"
+                            "mazo6"
+                            "mazo7"
+                            "mazo8"
+                            "mazo9"
+                            "mazo10"
+                            "mazo11"
+                            "mazo12"
+                            "footer";
+        gap: 50px;
+    }
+
+    .estilo__mazo img{
+        width: 70%;
+    }
+}
+
+/*****GALERIA FIN*****/

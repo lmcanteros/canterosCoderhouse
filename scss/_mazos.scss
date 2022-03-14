@@ -1,0 +1,45 @@
+/*****MAZOS INICIO*****/
+
+.mazos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /*Ver cómo achicar el fondo para vista mobile.*/
+    background-image: linear-gradient($colorFondo, $colorSecundario), linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/mazos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card{
+    background-color: inherit;
+    border: 0;
+    font-family: $fuentePrincipal;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+
+    & img{
+        border-top: solid 3px black;
+        border-left: solid 3px black;
+        border-right: solid 3px black;
+        border-bottom: solid 3px black;
+    }
+
+    & p{
+        font-family: $fuenteSecundaria;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .mazos{
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+/*****MAZOS FIN*****/

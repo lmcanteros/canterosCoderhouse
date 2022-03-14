@@ -1,0 +1,97 @@
+/*****ITEMS GENERALES INICIO*****/
+
+.logo__header{
+    text-decoration: none;
+}
+
+.logo__footer{
+    text-decoration: none;
+    color: white;
+    font-size: 33.334px;
+
+    &:hover{
+        color: white;
+    }
+}
+
+.navbar{
+    background-color: $colorPrincipal;
+    border-bottom: 1px solid white;
+}
+
+h1{
+    color: white;
+    font-family: $fuentePrincipal;
+    font-size: 50px;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+    font-family: $fuentePrincipal;
+    font-weight: bold;
+
+    &:hover{
+        background-color: $colorSecundario;
+        color: $colorPrincipal;
+    }
+}
+
+body{
+    background-color: $colorSecundario;
+    width: 100%;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color:  $colorPrincipal;
+    color: white;
+    font-family: $fuentePrincipal;
+    font-weight: lighter;
+    height: 100px;
+    width: 100%;
+    border-top: 1px solid white;
+}
+
+.texto__footer{
+    margin-bottom: 0px;
+}
+
+.iconos{
+    display: flex;
+    font-size: 30px;
+    gap: 15px;
+}
+
+@media screen and (max-width: 768px){
+    ul{
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 80%;
+        gap: 0;
+    }
+
+    .logo__footer{
+        font-size: 30px;
+    }
+
+    footer p{
+        display: none;
+    }
+
+    .iconos{
+        gap: 10px;
+    }
+}
+
+/*****ITEMS GENERALES FIN*****/
