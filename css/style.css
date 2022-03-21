@@ -4,7 +4,6 @@
   padding: 0; }
 
 /*----------CHECKLIST GENERAL-----------/
-/-Cambiar Roboto por mejor fuente.      /
 /-Mejorar (o rehacer) página "Cartas".  /
 /-Corregir tamaño fondo de páginas.     /
 /______________________________________*/
@@ -14,6 +13,7 @@
 /______________________________________*/
 /*COLORES*/
 /*FUENTES*/
+/*MIXINS*/
 /*****ITEMS GENERALES INICIO*****/
 .logo__header {
   text-decoration: none; }
@@ -111,7 +111,8 @@ footer {
     font-family: "Quintessential", cursive;
     font-size: 50px; }
   .hero__parrafo {
-    font-family: "Roboto Mono", monospace; }
+    font-family: "Cormorant", cursive;
+    font-size: 21px; }
 
 @media screen and (max-width: 768px) {
   /*El tamaño y posición del texto, si bien están ajustados para mobile, no me dejan satisfecho. Buscar una mejor manera.*/
@@ -133,7 +134,8 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative; }
+  position: relative;
+  height: auto; }
 
 .card {
   background-color: inherit;
@@ -141,6 +143,7 @@ footer {
   font-family: "Quintessential", cursive;
   color: white;
   text-shadow: 2px 2px 4px #000000;
+  font-size: 20px;
   text-align: center; }
   .card img {
     border-top: solid 3px black;
@@ -148,7 +151,30 @@ footer {
     border-right: solid 3px black;
     border-bottom: solid 3px black; }
   .card p {
-    font-family: "Roboto Mono", monospace; }
+    font-family: "Cormorant", cursive; }
+
+.boton__info, .boton__comprar, .boton__nodispo {
+  width: 160px;
+  background-color: #741b47;
+  font-family: "Quintessential", cursive;
+  color: white;
+  font-size: 20px;
+  border-color: white;
+  border-radius: 50px; }
+  .boton__info:hover, .boton__comprar:hover, .boton__nodispo:hover {
+    background-color: #f6b26b;
+    border-color: #741b47;
+    color: black; }
+
+.boton__comprar {
+  background-color: #02027a; }
+
+.boton__nodispo {
+  background-color: grey; }
+  .boton__nodispo:hover {
+    background-color: grey;
+    color: white;
+    border-color: white; }
 
 @media screen and (max-width: 768px) {
   .mazos {
@@ -163,7 +189,8 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative; }
+  position: relative;
+  height: auto; }
 
 .video1 {
   margin-top: 30px; }
@@ -182,12 +209,13 @@ footer {
   text-shadow: 2px 2px 4px #000000; }
 
 .parrafo__cartas {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Cormorant", cursive;
   text-align: center;
   padding-left: 150px;
   padding-right: 150px;
   color: white;
-  text-shadow: 2px 2px 4px #000000; }
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 20px; }
 
 iframe {
   border-top: solid 1px black;
@@ -229,7 +257,8 @@ iframe {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative; }
+  position: relative;
+  height: auto; }
   .galeria header {
     grid-area: header; }
   .galeria footer {
@@ -317,7 +346,8 @@ iframe {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative; }
+  position: relative;
+  height: auto; }
 
 .formulario {
   margin-top: 30px;
@@ -333,15 +363,18 @@ iframe {
   text-shadow: 2px 2px 4px #000000; }
 
 .accordion-header {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Cormorant", cursive;
   font-weight: bold; }
 
 .accordion-body {
   color: black;
-  font-family: "Roboto Mono", monospace; }
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: "Cormorant", cursive; }
 
 .accordion-button {
   color: white;
+  font-size: 20px;
   background-color: #741b47;
   border-radius: 100px; }
   .accordion-button:not(.collapsed) {

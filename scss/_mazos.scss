@@ -8,18 +8,15 @@
     padding-bottom: 30px;
     /*Ver cómo achicar el fondo para vista mobile.*/
     background-image: linear-gradient($colorFondo, $colorSecundario), linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/mazos.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    @include fondoPagina (auto);
 }
 
 .card{
     background-color: inherit;
     border: 0;
     font-family: $fuentePrincipal;
-    color: white;
-    text-shadow: 2px 2px 4px #000000;
+    @include textoPagina;
+    font-size: 20px;
     text-align: center;
 
     & img{
@@ -31,6 +28,38 @@
 
     & p{
         font-family: $fuenteSecundaria;
+    }
+}
+
+.boton__info{
+    width: 160px;
+    background-color: $colorPrincipal;
+    font-family: $fuentePrincipal;
+    color: white;
+    font-size: 20px;
+    border-color: white;
+    border-radius: 50px;
+
+    &:hover{
+        background-color: $colorSecundario;
+        border-color: $colorPrincipal;
+        color: black;
+    }
+}
+
+.boton__comprar{
+    @extend .boton__info;
+    background-color: rgb(2, 2, 122)
+}
+
+.boton__nodispo{
+    @extend .boton__info;
+    background-color: grey;
+
+    &:hover{
+        background-color: grey;
+        color: white;
+        border-color: white;
     }
 }
 
