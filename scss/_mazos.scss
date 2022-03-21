@@ -35,10 +35,10 @@
     width: 160px;
     background-color: $colorPrincipal;
     font-family: $fuentePrincipal;
-    color: white;
     font-size: 20px;
     border-color: white;
     border-radius: 50px;
+    @include textoPagina;
 
     &:hover{
         background-color: $colorSecundario;
@@ -47,19 +47,15 @@
     }
 }
 
-.boton__comprar{
-    @extend .boton__info;
-    background-color: rgb(2, 2, 122)
-}
-
-.boton__nodispo{
+.otroBoton__info{
     @extend .boton__info;
     background-color: grey;
+    border-color: white;
 
     &:hover{
         background-color: grey;
-        color: white;
         border-color: white;
+        color: white;
     }
 }
 
