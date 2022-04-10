@@ -67,6 +67,11 @@ footer {
   display: flex;
   font-size: 30px;
   gap: 15px; }
+  .iconos a {
+    color: white;
+    transition: 0.25s; }
+    .iconos a:hover {
+      color: #f6b26b; }
 
 @media screen and (max-width: 768px) {
   ul {
@@ -153,7 +158,7 @@ footer {
   .card p {
     font-family: "Cormorant", cursive; }
 
-.boton__info, .otroBoton__info {
+.boton__info {
   width: 160px;
   background-color: #741b47;
   font-family: "Quintessential", cursive;
@@ -162,19 +167,22 @@ footer {
   border-radius: 50px;
   color: white;
   text-shadow: 2px 2px 4px #000000; }
-  .boton__info:hover, .otroBoton__info:hover {
+  .boton__info:hover {
     background-color: #f6b26b;
     border-color: #741b47;
     color: black; }
 
-.otroBoton__info {
-  background-color: grey;
-  border-color: white; }
-  .otroBoton__info:hover {
+/*.otroBoton__info{
+    @extend .boton__info;
     background-color: grey;
     border-color: white;
-    color: white; }
 
+    &:hover{
+        background-color: grey;
+        border-color: white;
+        color: white;
+    }
+}*/
 @media screen and (max-width: 768px) {
   .mazos {
     flex-direction: column;

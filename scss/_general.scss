@@ -64,6 +64,15 @@ footer{
     display: flex;
     font-size: 30px;
     gap: 15px;
+
+    & a{
+        color: white;
+        transition: 0.25s;
+
+        &:hover{
+            color: $colorSecundario;
+        }
+    }
 }
 
 @media screen and (max-width: 768px){
